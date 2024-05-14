@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    networks:
+      - pg
+    environment:
+      POSTGRES_DB: piscineds
+      POSTGRES_USER: jgautier
+      POSTGRES_PASSWORD: mysecretpassword
+    volumes:
+      - ./asset:/tmp
+      - ./table.sql:/docker-entrypoint-initdb.d/table.sql
+
+  adminer:
+    image: dpage/pgadmin4
+    restart: always
+    networks:
+      - pg
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: jgautier@jgautier.com
+      PGADMIN_DEFAULT_PASSWORD: jgautier
+    volumes:
+      - ./servers.json:/pgadmin4/servers.json
+
+networks:
+  pg:
