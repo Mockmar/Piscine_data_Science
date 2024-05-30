@@ -9,8 +9,8 @@ services:
       POSTGRES_USER: jgautier
       POSTGRES_PASSWORD: mysecretpassword
     volumes:
-      - /mnt/nfs/homes/jgautier/sgoinfre/asset/customer:/tmp/customer
-      - /mnt/nfs/homes/jgautier/sgoinfre/asset/script/table.sql:/docker-entrypoint-initdb.d/table.sql
+      - ./data_2022_oct.csv:/tmp/customer/data_2022_oct.csv
+      - ./table.sql:/docker-entrypoint-initdb.d/table.sql
 
   adminer:
     image: dpage/pgadmin4
@@ -23,7 +23,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: jgautier@jgautier.com
       PGADMIN_DEFAULT_PASSWORD: jgautier
     volumes:
-      - /mnt/nfs/homes/jgautier/sgoinfre/asset/config/servers.json:/pgadmin4/servers.json
+      - ./servers.json:/pgadmin4/servers.json
 
 networks:
   pg:
