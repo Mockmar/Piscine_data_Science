@@ -8,9 +8,8 @@ services:
       POSTGRES_DB: piscineds
       POSTGRES_USER: jgautier
       POSTGRES_PASSWORD: mysecretpassword
-    volumes:
-      - ./data_2022_oct.csv:/tmp/customer/data_2022_oct.csv
-      - ./data_2022_nov.csv:/tmp/customer/data_2022_nov.csv
+    ports:
+      - "5432:5432"
 
   adminer:
     image: dpage/pgadmin4
