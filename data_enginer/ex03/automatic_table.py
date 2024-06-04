@@ -34,7 +34,7 @@ def insert_dataframe_to_table(dataframe, table, engine):
         print(f"Data inserted into table {table.name}")
 
 def main():
-    dataframes_dict = load_csv_to_dataframe_from_folder("./data")
+    dataframes_dict = load_csv_to_dataframe_from_folder("./data/customer")
 
     DB_NAME = 'piscineds'
     DB_USER = 'jgautier'
