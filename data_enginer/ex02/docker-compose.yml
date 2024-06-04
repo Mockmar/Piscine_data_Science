@@ -9,7 +9,7 @@ services:
       POSTGRES_USER: jgautier
       POSTGRES_PASSWORD: mysecretpassword
     volumes:
-      - ./data_2022_oct.csv:/tmp/customer/data_2022_oct.csv
+      - ../subject/customer/data_2022_oct.csv:/tmp/customer/data_2022_oct.csv
       - ./table.sql:/docker-entrypoint-initdb.d/table.sql
 
   adminer:

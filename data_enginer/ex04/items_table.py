@@ -34,9 +34,8 @@ def insert_dataframe_to_table(dataframe, table, engine):
         print(f"Data inserted into table {table.name}")
 
 def main():
-    dataframes_dict = load_csv_to_dataframe_from_folder("./data/items")
+    dataframes_dict = load_csv_to_dataframe_from_folder("../subject/item")
 
-# peut etre foutre les doone sensible dans un .env idem pour le .yml
     DB_NAME = 'piscineds'
     DB_USER = 'jgautier'
     DB_PASSWORD = 'mysecretpassword'
